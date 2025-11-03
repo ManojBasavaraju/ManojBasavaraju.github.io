@@ -1,293 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manoj Basavaraju - Business Development & Analytics Specialist - Portfolio">
-    <meta name="keywords" content="business development, analytics, KPI dashboard, Python, SQL">
-    <meta property="og:title" content="Manoj Basavaraju - Business Development & Analytics Portfolio">
-    <title>Manoj Basavaraju | Business Development & Analytics Specialist</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Manoj Basavaraju | Futuristic 3D Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap/dist/gsap.min.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-brand">✨ Manoj Basavaraju</div>
-        <ul class="nav-links">
-            <li><a href="#project">Project</a></li>
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#tech">Stack</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Manoj Basavaraju</h1>
-            <div class="hero-role">Business Development & Analytics Specialist</div>
-            <p class="hero-tagline">
-                💡 Transforming business data into powerful insights | 📊 Real-time KPI tracking | 🎯 Strategic team management | 🚀 Data-driven decision making
-            </p>
-            <div class="hero-buttons">
-                <a href="#project" class="btn btn-primary">Explore My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
+<!-- Navigation with Dropdowns -->
+<nav class="navbar">
+  <div class="logo">MB</div>
+  <ul class="nav-items">
+    <li class="dropdown">
+      <a href="#home" class="dropbtn">Home</a>
+      <div class="dropdown-content">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+      </div>
+    </li>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#tech">Tech Stack</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <!-- Project Overview -->
-    <section class="overview" id="project">
-        <div class="container">
-            <h2>Business Development Analytics Dashboard</h2>
-            <p>
-                A comprehensive real-time analytics platform providing complete visibility into KPIs, client negotiations, 
-                team performance, and financial metrics. Automates reporting and enables data-driven decision-making.
-            </p>
+<!-- Hero Section with 3D Rotation Cube -->
+<section id="hero">
+  <canvas id="cube"></canvas>
+  <div class="intro-text">
+    <h1>Manoj Basavaraju</h1>
+    <h2>Futuristic Business & Data Innovator</h2>
+    <p>Transforming visions into immersive 3D experiences. Welcome to my high-end portfolio.</p>
+    <a class="btn btn-primary" href="#projects">My Projects</a>
+  </div>
+</section>
 
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon">📈</div>
-                    <h3>Sales Performance</h3>
-                    <p>Monitor daily sales trends, revenue forecasts, and pipeline management with automated data aggregation</p>
-                </div>
+<!-- Projects Section -->
+<section id="projects" class="section">
+  <h2>My Showcase</h2>
+  <div class="project-grid">
+    <div class="project-card" data-aos="zoom-in">
+      <h3>AI-Powered KPI Dashboard</h3>
+      <p>Real-time analytics with stunning 3D visuals, responsive charts, and immersive interactions.</p>
+    </div>
+    <div class="project-card" data-aos="zoom-in" style="animation-delay: 0.2s;">
+      <h3>Next-Gen Portfolio</h3>
+      <p>Cutting-edge 3D website with floating particles, interactive elements, and fluid transitions.</p>
+    </div>
+    <!-- Add more projects as you like -->
+  </div>
+</section>
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon">🤝</div>
-                    <h3>Negotiation Tracker</h3>
-                    <p>Log client interactions, track outcomes, and analyze win/loss rates with conversion metrics</p>
-                </div>
+<!-- Tech & Skills in 3D -->
+<section id="tech" class="section">
+  <h2>My Tech Stack</h2>
+  <div class="tech-stack">
+    <div class="tech-card" data-aos="flip-left"><h4>Three.js</h4></div>
+    <div class="tech-card" data-aos="flip-left" style="animation-delay: 0.2s;"><h4>GSAP & WebGL</h4></div>
+    <div class="tech-card" data-aos="flip-left" style="animation-delay: 0.4s;"><h4>Python & SQL</h4></div>
+  </div>
+</section>
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon">👥</div>
-                    <h3>Team Performance</h3>
-                    <p>Visualize team KPIs, attendance, productivity, and individual performance against targets</p>
-                </div>
+<!-- About with floating particles -->
+<section id="about" class="section">
+  <h2>About Manoj</h2>
+  <p>Visionary in data-driven business solutions with immersive 3D web design expertise.</p>
+  <div id="aboutParticles"></div>
+</section>
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon">📊</div>
-                    <h3>Auto Reporting</h3>
-                    <p>Generate comprehensive monthly reports with visual summaries and executive briefings automatically</p>
-                </div>
+<!-- Contact & Footer -->
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <p>Let’s create extraordinary experiences together.</p>
+  <div class="contact-info">
+    <p>Email: manojminzthemusician123@gmail.com</p>
+    <p>LinkedIn & GitHub links</p>
+  </div>
+</section>
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon">💰</div>
-                    <h3>Financial Dashboard</h3>
-                    <p>Track revenue, expenses, margins, tax impacts, and financial forecasts in real-time</p>
-                </div>
+<!-- Scripts -->
+<script src="script.js"></script>
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon">🔔</div>
-                    <h3>Smart Alerts</h3>
-                    <p>Customizable alerts for KPI deviations, missed targets, and critical business events</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dashboard Metrics -->
-    <section class="dashboard" id="dashboard">
-        <div class="container">
-            <h2>Live Dashboard Preview</h2>
-
-            <div class="metrics-grid">
-                <div class="metric-card" data-aos="fade-up">
-                    <div class="metric-value" data-target="75">0</div>
-                    <div class="metric-unit">K</div>
-                    <div class="metric-label">Monthly Revenue</div>
-                    <div class="metric-desc">↑ 67% growth over 12 months</div>
-                </div>
-
-                <div class="metric-card" data-aos="fade-up">
-                    <div class="metric-value" data-target="65">0</div>
-                    <div class="metric-unit">%</div>
-                    <div class="metric-label">Win Rate</div>
-                    <div class="metric-desc">Strong negotiation performance</div>
-                </div>
-
-                <div class="metric-card" data-aos="fade-up">
-                    <div class="metric-value" data-target="92">0</div>
-                    <div class="metric-unit">%</div>
-                    <div class="metric-label">Team Performance</div>
-                    <div class="metric-desc">Exceeding targets consistently</div>
-                </div>
-
-                <div class="metric-card" data-aos="fade-up">
-                    <div class="metric-value" data-target="87">0</div>
-                    <div class="metric-unit">%</div>
-                    <div class="metric-label">Budget Used</div>
-                    <div class="metric-desc">$217.5K of $250K allocated</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack -->
-    <section class="tech-stack" id="tech">
-        <div class="container">
-            <h2>Technology Stack</h2>
-
-            <div class="tech-grid">
-                <div class="tech-item" data-aos="fade-up">
-                    <h3>🐍 Python Backend</h3>
-                    <p>Data processing with Pandas, NumPy for advanced calculations</p>
-                    <div class="tech-tools">Pandas • NumPy • SQLAlchemy</div>
-                </div>
-
-                <div class="tech-item" data-aos="fade-up">
-                    <h3>🗄️ PostgreSQL Database</h3>
-                    <p>Reliable data storage and complex SQL queries</p>
-                    <div class="tech-tools">PostgreSQL • SQL • Database Design</div>
-                </div>
-
-                <div class="tech-item" data-aos="fade-up">
-                    <h3>📊 Data Visualization</h3>
-                    <p>Interactive dashboards with Plotly & Matplotlib</p>
-                    <div class="tech-tools">Plotly • Matplotlib • Seaborn</div>
-                </div>
-
-                <div class="tech-item" data-aos="fade-up">
-                    <h3>📈 Reporting Tools</h3>
-                    <p>Excel templates and Jupyter Notebooks analysis</p>
-                    <div class="tech-tools">Excel • Jupyter • Python</div>
-                </div>
-
-                <div class="tech-item" data-aos="fade-up">
-                    <h3>🔌 API Integration</h3>
-                    <p>RESTful APIs for real-time data synchronization</p>
-                    <div class="tech-tools">REST APIs • JSON • Integration</div>
-                </div>
-
-                <div class="tech-item" data-aos="fade-up">
-                    <h3>🛠️ DevTools</h3>
-                    <p>Git version control and professional workflow</p>
-                    <div class="tech-tools">Git • GitHub • VS Code</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results -->
-    <section class="results">
-        <div class="container">
-            <h2>Business Impact</h2>
-
-            <div class="results-grid">
-                <div class="result-item" data-aos="fade-up">
-                    <div class="result-number">80%</div>
-                    <div class="result-text">Reporting Time Saved</div>
-                </div>
-
-                <div class="result-item" data-aos="fade-up">
-                    <div class="result-number">50+</div>
-                    <div class="result-text">KPIs Tracked</div>
-                </div>
-
-                <div class="result-item" data-aos="fade-up">
-                    <div class="result-number">99.5%</div>
-                    <div class="result-text">Data Accuracy</div>
-                </div>
-
-                <div class="result-item" data-aos="fade-up">
-                    <div class="result-number">65%</div>
-                    <div class="result-text">Win Rate</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources -->
-    <section class="resources">
-        <div class="container">
-            <h2>📚 Resources & Documentation</h2>
-            <p>Explore comprehensive documentation, code samples, and deployment guides</p>
-
-            <div class="resource-buttons">
-                <a href="docs/project-documentation.md" class="resource-btn">📖 Documentation</a>
-                <a href="docs/sample-python-code.md" class="resource-btn">🐍 Code Samples</a>
-                <a href="docs/deployment-guide.md" class="resource-btn">🚀 Deployment</a>
-                <a href="https://github.com/ManojBasavaraju" class="resource-btn">💻 GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2>About Me</h2>
-
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Professional Journey</h3>
-                    <p>
-                        Experienced professional with a strong foundation in engineering and automation, 
-                        specializing in business development and data analytics.
-                    </p>
-                    <p>
-                        Passionate about transforming complex business challenges into elegant, data-driven solutions 
-                        that drive growth and operational efficiency.
-                    </p>
-                    <p>
-                        Currently focused on business development opportunities, freelance consulting, and helping 
-                        organizations optimize performance through analytics.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Key Expertise</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">Business Development</div>
-                        <div class="skill-item">KPI Analytics</div>
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">SQL Databases</div>
-                        <div class="skill-item">Team Management</div>
-                        <div class="skill-item">Data Visualization</div>
-                        <div class="skill-item">Financial Tracking</div>
-                        <div class="skill-item">Excel Pro</div>
-                        <div class="skill-item">API Integration</div>
-                        <div class="skill-item">Project Management</div>
-                        <div class="skill-item">Client Relations</div>
-                        <div class="skill-item">Automation</div>
-                    </div>
-                    <p style="margin-top: 30px; text-align: left; color: #999; font-size: 14px;">
-                        <strong>Education:</strong> Mechatronics & Automation Engineering, Kaunas University of Technology (2019-2022)
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Let's Connect & Collaborate</h2>
-            <p>Open to freelance projects, consulting, and exciting opportunities</p>
-
-            <div class="contact-info">
-                <p>📧 <strong>Email:</strong> manojminzthemusician123@gmail.com</p>
-                <p>💼 <strong>LinkedIn:</strong> linkedin.com/in/manoj-basavaraju</p>
-                <p>💻 <strong>GitHub:</strong> github.com/ManojBasavaraju</p>
-            </div>
-
-            <div class="contact-links">
-                <a href="mailto:manojminzthemusician123@gmail.com" class="contact-link">✉️ Email Me</a>
-                <a href="https://linkedin.com/in/manoj-basavaraju" class="contact-link">🔗 LinkedIn</a>
-                <a href="https://github.com/ManojBasavaraju" class="contact-link">💻 GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Manoj Basavaraju • Business Development & Analytics</p>
-        <p>🚀 <strong>Powered by Data & Innovation</strong> | Portfolio v2.0</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
