@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Development Analytics Dashboard | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">BD Analytics</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#project" class="nav-link">Project</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#tech" class="nav-link">Tech Stack</a></li>
+                <li><a href="#case-study" class="nav-link">Case Study</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Business Development Analytics Dashboard</h1>
+            <p class="hero-subtitle">Real-Time KPI Tracking &amp; Team Performance Analytics</p>
+            <a href="#project" class="btn btn-primary">Explore Project</a>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section project-overview" id="project">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Project Overview</span>
+                <h2 class="section-title">Transforming Business Intelligence</h2>
+                <p class="section-description">An automated analytics platform that turns complex data into actionable business insights</p>
+            </div>
+
+            <div class="project-info">
+                <div class="project-card problem-card">
+                    <div class="project-card-icon">🎯</div>
+                    <h3>The Challenge</h3>
+                    <p>Manual tracking of sales, client negotiations, and team performance metrics was time-consuming, error-prone, and prevented real-time decision-making</p>
+                </div>
+                <div class="project-card solution-card">
+                    <div class="project-card-icon">💡</div>
+                    <h3>The Solution</h3>
+                    <p>Developed an automated, real-time analytics dashboard aggregating data from multiple sources to provide actionable business insights</p>
+                </div>
+                <div class="project-card stats-card">
+                    <div class="stat-item">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Months</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">Solo</div>
+                        <div class="stat-label">Project</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Real-time Sales Performance Tracking</h3>
+                    <p>Monitor daily sales trends, revenue forecasts, and sales pipeline with automated data aggregation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Client Negotiation Tracker</h3>
+                    <p>Log client interactions, track negotiation outcomes, calculate win/loss rates and conversion metrics</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Team Productivity Dashboard</h3>
+                    <p>Visualize team KPIs, attendance, output metrics, and individual performance against targets</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Automated Monthly Reporting</h3>
+                    <p>Generate comprehensive monthly reports with visual summaries and executive briefings</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Financial P&amp;L Dashboard</h3>
+                    <p>Track revenue, expenses, margins, tax impacts, and financial forecasts in real-time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Alerts &amp; Notifications</h3>
+                    <p>Customizable alerts for KPI deviations, missed targets, and critical business events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Dashboard -->
+    <section class="section dashboard-section" id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Interactive Demo</span>
+                <h2 class="section-title">Live Dashboard Preview</h2>
+                <p class="section-description">Explore real-time business metrics and KPI visualizations</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h3>Monthly Sales Trend</h3>
+                        <span class="dashboard-tag">12-Month Overview</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h3>Client Negotiation Outcomes</h3>
+                        <span class="dashboard-tag">Win Rate Analysis</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="clientChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h3>Team Performance vs Target</h3>
+                        <span class="dashboard-tag">Target: 90%</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="teamChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h3>Budget Utilization</h3>
+                        <span class="dashboard-tag">$217.5K / $250K</span>
+                    </div>
+                    <div class="chart-container budget-chart">
+                        <canvas id="budgetChart"></canvas>
+                        <div class="budget-info">
+                            <div class="budget-stat">
+                                <span class="budget-label">Allocated</span>
+                                <span class="budget-value">$250,000</span>
+                            </div>
+                            <div class="budget-stat">
+                                <span class="budget-label">Spent</span>
+                                <span class="budget-value">$217,500</span>
+                            </div>
+                            <div class="budget-stat">
+                                <span class="budget-label">Utilization</span>
+                                <span class="budget-value highlight">87%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section tech-stack" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technology</span>
+                <h2 class="section-title">Technical Stack</h2>
+                <p class="section-description">Powerful tools and technologies powering the analytics platform</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p class="tech-category">Backend &amp; Data Processing</p>
+                    <p>Data processing, ETL pipeline, business logic</p>
+                    <div class="tech-tools">
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon">🗄️</div>
+                    <h3>SQL &amp; PostgreSQL</h3>
+                    <p class="tech-category">Database</p>
+                    <p>Data storage, complex queries, and advanced reporting capabilities</p>
+                    <div class="tech-tools">
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQL Queries</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon">📊</div>
+                    <h3>Visualization Libraries</h3>
+                    <p class="tech-category">Frontend &amp; Analytics</p>
+                    <p>Interactive dashboards, charts, and data visualizations</p>
+                    <div class="tech-tools">
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">Plotly</span>
+                        <span class="tech-tag">Seaborn</span>
+                        <span class="tech-tag">Excel</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon">🔌</div>
+                    <h3>APIs &amp; Integration</h3>
+                    <p class="tech-category">Data Integration</p>
+                    <p>RESTful APIs for real-time data synchronization and integration</p>
+                    <div class="tech-tools">
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">JSON</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon">🛠️</div>
+                    <h3>Development Tools</h3>
+                    <p class="tech-category">DevOps &amp; Environment</p>
+                    <p>Version control and notebook environments for development</p>
+                    <div class="tech-tools">
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Jupyter</span>
+                        <span class="tech-tag">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="section case-study" id="case-study">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Case Study</span>
+                <h2 class="section-title">Deep Dive: From Problem to Solution</h2>
+            </div>
+
+            <div class="case-study-content">
+                <div class="case-section">
+                    <h3 class="case-title">📖 Background</h3>
+                    <p>A high-growth tech-driven business development team was struggling to track KPIs, client negotiations, and team performance across multiple spreadsheets and manual reports. Decision-making was delayed due to lack of real-time visibility into business metrics.</p>
+                </div>
+
+                <div class="case-section">
+                    <h3 class="case-title">🎯 Objectives</h3>
+                    <ul class="case-list">
+                        <li>Reduce monthly reporting time by 60% through automation</li>
+                        <li>Provide real-time visibility into 50+ business KPIs</li>
+                        <li>Enable data-driven decision-making for business development and management</li>
+                        <li>Create a scalable system for tracking client interactions and negotiation outcomes</li>
+                    </ul>
+                </div>
+
+                <div class="case-section">
+                    <h3 class="case-title">⚙️ Implementation</h3>
+                    <div class="implementation-steps">
+                        <div class="step-card">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h4>Data Collection</h4>
+                                <p>Aggregated data from sales CRM, Excel files, and manual tracking logs</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h4>ETL Pipeline</h4>
+                                <p>Built Python scripts to clean, transform, and load data into PostgreSQL database</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h4>Dashboard Design</h4>
+                                <p>Created interactive visualizations using Python and Excel</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">04</div>
+                            <div class="step-content">
+                                <h4>Automation</h4>
+                                <p>Implemented scheduled reports and email notifications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h3 class="case-title">📈 Impact &amp; Results</h3>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <div class="impact-value">40%</div>
+                            <p>Reduction in manual reporting effort</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">Real-time</div>
+                            <p>Visibility into business metrics enabling faster decision-making</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">50+</div>
+                            <p>Simultaneous users supported on scalable system</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">Enhanced</div>
+                            <p>Client win rate tracking and negotiation insights</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h3 class="case-title">🚀 Future Enhancements</h3>
+                    <div class="future-grid">
+                        <div class="future-card">
+                            <span class="future-icon">🤖</span>
+                            <h4>Predictive Analytics</h4>
+                            <p>AI-powered sales forecasting</p>
+                        </div>
+                        <div class="future-card">
+                            <span class="future-icon">💡</span>
+                            <h4>AI Recommendations</h4>
+                            <p>Intelligent negotiation strategies</p>
+                        </div>
+                        <div class="future-card">
+                            <span class="future-icon">📱</span>
+                            <h4>Mobile App</h4>
+                            <p>On-the-go access to dashboards</p>
+                        </div>
+                        <div class="future-card">
+                            <span class="future-icon">🔗</span>
+                            <h4>CRM Integration</h4>
+                            <p>Additional system integrations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About</span>
+                <h2 class="section-title">Business Development &amp; Analytics Professional</h2>
+                <p class="section-description">Combining Technical Expertise with Strategic Business Insights</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-bio">
+                    <p class="bio-text">Passionate about leveraging data and automation to drive business growth and improve team performance. Background in engineering with deep experience in business development, KPI analytics, and data-driven decision-making.</p>
+                    
+                    <div class="education-card">
+                        <h3>🎓 Education</h3>
+                        <div class="education-info">
+                            <h4>Mechatronics and Automation Engineering</h4>
+                            <p>Kaunas University of Technology, Lithuania</p>
+                            <span class="education-years">2019-2022</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <div class="skills-card">
+                        <h3>💼 Expertise</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">Business Development &amp; KPI Analytics</span>
+                            <span class="skill-badge">Client Negotiation &amp; Relationship Management</span>
+                            <span class="skill-badge">Team Performance Management</span>
+                            <span class="skill-badge">Financial Tracking &amp; Reporting</span>
+                            <span class="skill-badge">Data Pipeline &amp; ETL Development</span>
+                            <span class="skill-badge">Interactive Dashboard Design</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-card">
+                        <h3>⚡ Technical Skills</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge tech">SQL &amp; Database Design</span>
+                            <span class="skill-badge tech">Python (Pandas, NumPy, Matplotlib)</span>
+                            <span class="skill-badge tech">Excel &amp; Advanced Data Modeling</span>
+                            <span class="skill-badge tech">API Integration &amp; REST Services</span>
+                            <span class="skill-badge tech">Git &amp; Version Control</span>
+                            <span class="skill-badge tech">Business Intelligence &amp; Reporting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title">Let's Collaborate</h2>
+                <p class="contact-subtitle">Let's collaborate to drive your business growth through data-driven insights!</p>
+                
+                <div class="availability">
+                    <p class="availability-text">Available for:</p>
+                    <div class="availability-tags">
+                        <span class="availability-tag">Freelance Projects</span>
+                        <span class="availability-tag">Consulting</span>
+                        <span class="availability-tag">Virtual Assistant</span>
+                        <span class="availability-tag">Business Development</span>
+                        <span class="availability-tag">Customer Experience Support</span>
+                    </div>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:manojminzthemusician123@gmail.com" class="btn btn-primary" target="_blank">Email Me</a>
+                    <a href="https://linkedin.com/in/manoj-basavaraju" class="btn btn-outline" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Manoj Basavaraju. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="mailto:manojminzthemusician123@gmail.com" target="_blank">Email</a>
+                    <a href="https://linkedin.com/in/manoj-basavaraju" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
